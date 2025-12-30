@@ -38,245 +38,78 @@ const Projects = () => {
   ];
 
   return (
-    <>
-      <style>{`
-        .projects-section {
-          background: #0f0f23;
-          padding: 60px 0;
-        }
-        .projects-container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 20px;
-        }
-        .section-title {
-          text-align: center;
-          margin-bottom: 40px;
-        }
-        .section-title h2 {
-          font-size: 2rem;
-          font-weight: 700;
-          color: #ffffff;
-          margin-bottom: 16px;
-        }
-        .title-underline {
-          width: 60px;
-          height: 4px;
-          background: #f5a623;
-          margin: 0 auto;
-          border-radius: 2px;
-        }
-        .projects-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 24px;
-        }
-        .project-card {
-          background: #1a1a2e;
-          border: 1px solid #2a2a45;
-          border-radius: 16px;
-          overflow: hidden;
-          position: relative;
-          transition: all 0.3s;
-        }
-        .project-card:hover {
-          border-color: rgba(245, 166, 35, 0.3);
-          transform: translateY(-5px);
-          box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-        .project-image {
-          height: 160px;
-          overflow: hidden;
-          position: relative;
-        }
-        .project-image img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.5s;
-        }
-        .project-card:hover .project-image img {
-          transform: scale(1.1);
-        }
-        .project-overlay {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(to top, #1a1a2e, transparent);
-        }
-        .pro-badge {
-          position: absolute;
-          top: 12px;
-          right: 12px;
-          padding: 4px 12px;
-          border-radius: 4px;
-          font-size: 0.7rem;
-          font-weight: 700;
-          background: #f5a623;
-          color: #0f0f23;
-        }
-        .project-content {
-          padding: 20px;
-        }
-        .project-title {
-          font-size: 1.1rem;
-          font-weight: 700;
-          color: #ffffff;
-          margin-bottom: 10px;
-          transition: color 0.3s;
-        }
-        .project-card:hover .project-title {
-          color: #f5a623;
-        }
-        .project-description {
-          color: #7a7a8c;
-          font-size: 0.85rem;
-          line-height: 1.6;
-          margin-bottom: 16px;
-          display: -webkit-box;
-          -webkit-line-clamp: 3;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-        .tech-tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 8px;
-          margin-bottom: 20px;
-        }
-        .tech-tag {
-          padding: 4px 10px;
-          border-radius: 20px;
-          font-size: 0.7rem;
-          border: 1px solid rgba(245, 166, 35, 0.3);
-          color: #a0a0b0;
-          background: rgba(245, 166, 35, 0.1);
-        }
-        .project-buttons {
-          display: flex;
-          gap: 10px;
-        }
-        .project-btn {
-          flex: 1;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 6px;
-          padding: 10px;
-          border-radius: 8px;
-          font-size: 0.75rem;
-          font-weight: 500;
-          text-decoration: none;
-          transition: all 0.3s;
-        }
-        .btn-outline {
-          border: 1px solid #f5a623;
-          color: #f5a623;
-          background: transparent;
-        }
-        .btn-outline:hover {
-          background: rgba(245, 166, 35, 0.1);
-        }
-        .btn-filled {
-          background: #f5a623;
-          color: #0f0f23;
-        }
-        .btn-filled:hover {
-          background: #ffc107;
-        }
+    <section id="projects" className="bg-dark py-15 md:py-20">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-10">
+        <div className="text-center mb-10 md:mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">Projects</h2>
+          <div className="w-15 h-1 bg-accent mx-auto rounded-sm"></div>
+        </div>
 
-        @media (min-width: 640px) {
-          .projects-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
-          .project-image {
-            height: 180px;
-          }
-        }
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="bg-dark-card border border-dark-border rounded-2xl overflow-hidden relative transition-all duration-300 hover:border-accent/30 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] group"
+            >
+              <div className="h-40 sm:h-45 overflow-hidden relative">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-card to-transparent"></div>
+                {project.featured && (
+                  <div className="absolute top-3 right-3 px-3 py-1 rounded text-xs font-bold bg-accent text-dark">
+                    Pro
+                  </div>
+                )}
+              </div>
 
-        @media (min-width: 768px) {
-          .projects-section {
-            padding: 80px 0;
-          }
-          .projects-container {
-            padding: 0 40px;
-          }
-          .section-title {
-            margin-bottom: 50px;
-          }
-          .section-title h2 {
-            font-size: 2.5rem;
-          }
-          .project-title {
-            font-size: 1.2rem;
-          }
-          .project-description {
-            font-size: 0.9rem;
-          }
-          .project-btn {
-            font-size: 0.8rem;
-          }
-        }
+              <div className="p-5">
+                <h3 className="text-lg md:text-xl font-bold text-text-primary mb-2.5 transition-colors duration-300 group-hover:text-accent">
+                  {project.title}
+                </h3>
+                <p className="text-text-muted text-sm leading-relaxed mb-4 line-clamp-3">
+                  {project.description}
+                </p>
 
-        @media (min-width: 1024px) {
-          .projects-grid {
-            grid-template-columns: repeat(3, 1fr);
-          }
-        }
-      `}</style>
-
-      <section id="projects" className="projects-section">
-        <div className="projects-container">
-          <div className="section-title">
-            <h2>Projects</h2>
-            <div className="title-underline"></div>
-          </div>
-
-          <div className="projects-grid">
-            {projects.map((project, index) => (
-              <div key={index} className="project-card">
-                <div className="project-image">
-                  <img src={project.image} alt={project.title} />
-                  <div className="project-overlay"></div>
-                  {project.featured && <div className="pro-badge">Pro</div>}
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {project.tech.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="px-2.5 py-1 rounded-full text-xs border border-accent/30 text-text-secondary bg-accent/10"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
 
-                <div className="project-content">
-                  <h3 className="project-title">{project.title}</h3>
-                  <p className="project-description">{project.description}</p>
-
-                  <div className="tech-tags">
-                    {project.tech.map((tech, i) => (
-                      <span key={i} className="tech-tag">{tech}</span>
-                    ))}
-                  </div>
-
-                  <div className="project-buttons">
-                    <a 
-                      href={project.links.frontend}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-btn btn-outline"
-                    >
-                      <Github size={14} />
-                      Front-End Code
-                    </a>
-                    <a 
-                      href={project.links.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-btn btn-filled"
-                    >
-                      <ExternalLink size={14} />
-                      Live Demo
-                    </a>
-                  </div>
+                <div className="flex gap-2.5">
+                  <a
+                    href={project.links.frontend}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-lg text-xs font-medium border border-accent text-accent bg-transparent transition-all duration-300 hover:bg-accent/10"
+                  >
+                    <Github size={14} />
+                    Front-End Code
+                  </a>
+                  <a
+                    href={project.links.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-lg text-xs font-medium bg-accent text-dark transition-all duration-300 hover:bg-accent-hover"
+                  >
+                    <ExternalLink size={14} />
+                    Live Demo
+                  </a>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

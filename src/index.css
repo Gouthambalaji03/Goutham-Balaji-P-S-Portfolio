@@ -1,5 +1,8 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   margin: 0;
@@ -64,13 +67,12 @@ html {
   background: #ffc107;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .desktop-nav {
-    display: none !important;
-  }
+/* Progress bar gradient */
+.progress-bar-gradient {
+  background: linear-gradient(90deg, #f5a623, #ffc107);
+}
 
-  .mobile-menu-btn {
-    display: block !important;
-  }
+/* Profile border gradient */
+.profile-gradient {
+  background: linear-gradient(135deg, #f5a623, #ffc107);
 }

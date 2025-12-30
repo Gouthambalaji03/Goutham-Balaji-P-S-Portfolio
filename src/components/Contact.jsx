@@ -22,294 +22,117 @@ const Contact = () => {
   };
 
   return (
-    <>
-      <style>{`
-        .contact-section {
-          background: #0f0f23;
-          padding: 60px 0;
-        }
-        .contact-container {
-          max-width: 1100px;
-          margin: 0 auto;
-          padding: 0 20px;
-        }
-        .section-title {
-          text-align: center;
-          margin-bottom: 40px;
-        }
-        .section-title h2 {
-          font-size: 2rem;
-          font-weight: 700;
-          color: #ffffff;
-          margin-bottom: 16px;
-        }
-        .title-underline {
-          width: 60px;
-          height: 4px;
-          background: #f5a623;
-          margin: 0 auto;
-          border-radius: 2px;
-        }
-        .contact-content {
-          display: flex;
-          gap: 40px;
-          flex-wrap: wrap;
-        }
-        .contact-info {
-          flex: 1;
-          min-width: 280px;
-        }
-        .contact-info h3 {
-          font-size: 1.3rem;
-          font-weight: 700;
-          color: #f5a623;
-          margin-bottom: 16px;
-        }
-        .contact-info > p {
-          color: #a0a0b0;
-          font-size: 0.95rem;
-          line-height: 1.7;
-          margin-bottom: 24px;
-        }
-        .contact-item {
-          display: flex;
-          align-items: center;
-          gap: 14px;
-          margin-bottom: 16px;
-        }
-        .contact-icon {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          background: rgba(245, 166, 35, 0.15);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-        }
-        .contact-icon svg {
-          color: #f5a623;
-        }
-        .contact-label {
-          color: #7a7a8c;
-          font-size: 0.75rem;
-          margin-bottom: 2px;
-        }
-        .contact-value {
-          color: #ffffff;
-          font-weight: 500;
-          font-size: 0.9rem;
-          text-decoration: none;
-        }
-        .social-links {
-          display: flex;
-          gap: 12px;
-          margin-top: 24px;
-          flex-wrap: wrap;
-        }
-        .social-link {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          padding: 10px 16px;
-          border-radius: 8px;
-          border: 1px solid #2a2a45;
-          color: #a0a0b0;
-          text-decoration: none;
-          font-size: 0.85rem;
-          transition: all 0.3s;
-        }
-        .social-link:hover {
-          border-color: #f5a623;
-          color: #f5a623;
-        }
-        .contact-form {
-          flex: 1;
-          min-width: 280px;
-        }
-        .form-group {
-          margin-bottom: 18px;
-        }
-        .form-label {
-          display: block;
-          color: #a0a0b0;
-          font-size: 0.85rem;
-          margin-bottom: 8px;
-        }
-        .form-input {
-          width: 100%;
-          padding: 12px 14px;
-          border-radius: 8px;
-          border: 1px solid #2a2a45;
-          background: #1a1a2e;
-          color: #ffffff;
-          font-size: 0.9rem;
-          outline: none;
-          transition: border-color 0.3s;
-        }
-        .form-input:focus {
-          border-color: #f5a623;
-        }
-        .form-input::placeholder {
-          color: #5a5a6c;
-        }
-        .form-textarea {
-          resize: none;
-          min-height: 120px;
-        }
-        .submit-btn {
-          width: 100%;
-          padding: 14px;
-          border-radius: 8px;
-          border: none;
-          background: #f5a623;
-          color: #0f0f23;
-          font-size: 0.95rem;
-          font-weight: 600;
-          cursor: pointer;
-          transition: background 0.3s;
-        }
-        .submit-btn:hover {
-          background: #ffc107;
-        }
+    <section id="contact" className="bg-dark py-15 md:py-20">
+      <div className="max-w-[1100px] mx-auto px-5 md:px-10">
+        <div className="text-center mb-10 md:mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">Get In Touch</h2>
+          <div className="w-15 h-1 bg-accent mx-auto rounded-sm"></div>
+        </div>
 
-        @media (min-width: 768px) {
-          .contact-section {
-            padding: 80px 0;
-          }
-          .contact-container {
-            padding: 0 40px;
-          }
-          .section-title {
-            margin-bottom: 50px;
-          }
-          .section-title h2 {
-            font-size: 2.5rem;
-          }
-          .contact-content {
-            gap: 50px;
-          }
-          .contact-info h3 {
-            font-size: 1.5rem;
-          }
-        }
+        <div className="flex gap-10 md:gap-12 flex-wrap flex-col md:flex-row">
+          <div className="flex-1 min-w-[280px]">
+            <h3 className="text-xl md:text-2xl font-bold text-accent mb-4">Let's Work Together</h3>
+            <p className="text-text-secondary text-sm md:text-base leading-relaxed mb-6">
+              I'm always interested in new opportunities and exciting projects.
+              Whether you have a project in mind or just want to chat about web development,
+              feel free to reach out!
+            </p>
 
-        @media (max-width: 767px) {
-          .contact-content {
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <section id="contact" className="contact-section">
-        <div className="contact-container">
-          <div className="section-title">
-            <h2>Get In Touch</h2>
-            <div className="title-underline"></div>
-          </div>
-
-          <div className="contact-content">
-            <div className="contact-info">
-              <h3>Let's Work Together</h3>
-              <p>
-                I'm always interested in new opportunities and exciting projects. 
-                Whether you have a project in mind or just want to chat about web development, 
-                feel free to reach out!
-              </p>
-
-              <div className="contact-item">
-                <div className="contact-icon">
-                  <Mail size={18} />
-                </div>
-                <div>
-                  <p className="contact-label">Email</p>
-                  <a href="mailto:26gouthamba@gmail.com" className="contact-value">
-                    26gouthamba@gmail.com
-                  </a>
-                </div>
+            <div className="flex items-center gap-3.5 mb-4">
+              <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center shrink-0">
+                <Mail size={18} className="text-accent" />
               </div>
-
-              <div className="contact-item">
-                <div className="contact-icon">
-                  <Phone size={18} />
-                </div>
-                <div>
-                  <p className="contact-label">Mobile</p>
-                  <a href="tel:+918778786208" className="contact-value">
-                    +91 87787 86208
-                  </a>
-                </div>
-              </div>
-
-              <div className="social-links">
-                <a 
-                  href="https://github.com/Gouthambalaji03" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="social-link"
-                >
-                  <Github size={16} />
-                  GitHub
-                </a>
-                <a 
-                  href="https://www.linkedin.com/in/goutham-balaji-p-s-935b9a25b" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="social-link"
-                >
-                  <Linkedin size={16} />
-                  LinkedIn
+              <div>
+                <p className="text-text-muted text-xs mb-0.5">Email</p>
+                <a href="mailto:26gouthamba@gmail.com" className="text-text-primary font-medium text-sm">
+                  26gouthamba@gmail.com
                 </a>
               </div>
             </div>
 
-            <form className="contact-form" onSubmit={handleSubmit}>
-              <div className="form-group">
-                <label className="form-label">Name</label>
-                <input 
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Your Name"
-                  className="form-input"
-                  required
-                />
+            <div className="flex items-center gap-3.5 mb-4">
+              <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center shrink-0">
+                <Phone size={18} className="text-accent" />
               </div>
-
-              <div className="form-group">
-                <label className="form-label">Email</label>
-                <input 
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="your.email@example.com"
-                  className="form-input"
-                  required
-                />
+              <div>
+                <p className="text-text-muted text-xs mb-0.5">Mobile</p>
+                <a href="tel:+918778786208" className="text-text-primary font-medium text-sm">
+                  +91 87787 86208
+                </a>
               </div>
+            </div>
 
-              <div className="form-group">
-                <label className="form-label">Message</label>
-                <textarea 
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Your message..."
-                  className="form-input form-textarea"
-                  required
-                ></textarea>
-              </div>
-
-              <button type="submit" className="submit-btn">
-                Send Message
-              </button>
-            </form>
+            <div className="flex gap-3 mt-6 flex-wrap">
+              <a
+                href="https://github.com/Gouthambalaji03"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-dark-border text-text-secondary text-sm transition-all duration-300 hover:border-accent hover:text-accent"
+              >
+                <Github size={16} />
+                GitHub
+              </a>
+              <a
+                href="https://www.linkedin.com/in/goutham-balaji-p-s-935b9a25b"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-dark-border text-text-secondary text-sm transition-all duration-300 hover:border-accent hover:text-accent"
+              >
+                <Linkedin size={16} />
+                LinkedIn
+              </a>
+            </div>
           </div>
+
+          <form className="flex-1 min-w-[280px]" onSubmit={handleSubmit}>
+            <div className="mb-4">
+              <label className="block text-text-secondary text-sm mb-2">Name</label>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Your Name"
+                className="w-full px-3.5 py-3 rounded-lg border border-dark-border bg-dark-card text-text-primary text-sm outline-none transition-colors duration-300 focus:border-accent placeholder:text-text-muted/60"
+                required
+              />
+            </div>
+
+            <div className="mb-4">
+              <label className="block text-text-secondary text-sm mb-2">Email</label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="your.email@example.com"
+                className="w-full px-3.5 py-3 rounded-lg border border-dark-border bg-dark-card text-text-primary text-sm outline-none transition-colors duration-300 focus:border-accent placeholder:text-text-muted/60"
+                required
+              />
+            </div>
+
+            <div className="mb-4">
+              <label className="block text-text-secondary text-sm mb-2">Message</label>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Your message..."
+                className="w-full px-3.5 py-3 rounded-lg border border-dark-border bg-dark-card text-text-primary text-sm outline-none transition-colors duration-300 focus:border-accent placeholder:text-text-muted/60 resize-none min-h-[120px]"
+                required
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full py-3.5 rounded-lg border-none bg-accent text-dark text-base font-semibold cursor-pointer transition-colors duration-300 hover:bg-accent-hover"
+            >
+              Send Message
+            </button>
+          </form>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

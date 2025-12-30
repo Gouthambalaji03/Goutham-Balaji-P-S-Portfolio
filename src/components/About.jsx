@@ -2,226 +2,79 @@ import { Mail, Github, Linkedin, Phone } from 'lucide-react';
 
 const About = () => {
   return (
-    <>
-      <style>{`
-        .about-section {
-          background: #0f0f23;
-          padding: 60px 0;
-        }
-        .about-container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 20px;
-        }
-        .section-title {
-          text-align: center;
-          margin-bottom: 40px;
-        }
-        .section-title h2 {
-          font-size: 2rem;
-          font-weight: 700;
-          color: #ffffff;
-          margin-bottom: 16px;
-        }
-        .title-underline {
-          width: 60px;
-          height: 4px;
-          background: #f5a623;
-          margin: 0 auto;
-          border-radius: 2px;
-        }
-        .about-content {
-          display: flex;
-          gap: 30px;
-          flex-wrap: wrap;
-        }
-        .about-text {
-          flex: 1;
-          min-width: 280px;
-        }
-        .about-text p {
-          color: #a0a0b0;
-          font-size: 0.95rem;
-          line-height: 1.8;
-          margin-bottom: 16px;
-        }
-        .about-text .highlight {
-          color: #ffffff;
-          font-weight: 600;
-        }
-        .about-text .accent {
-          color: #f5a623;
-        }
-        .info-card {
-          width: 100%;
-          max-width: 320px;
-          background: #f5a623;
-          border-radius: 16px;
-          padding: 24px;
-          color: #0f0f23;
-          flex-shrink: 0;
-        }
-        .info-card h3 {
-          font-size: 1.25rem;
-          font-weight: 700;
-          margin-bottom: 20px;
-        }
-        .info-item {
-          display: flex;
-          align-items: flex-start;
-          gap: 12px;
-          margin-bottom: 16px;
-        }
-        .info-icon {
-          width: 32px;
-          height: 32px;
-          background: rgba(0,0,0,0.1);
-          border-radius: 6px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-        }
-        .info-label {
-          font-size: 0.75rem;
-          opacity: 0.7;
-          margin-bottom: 2px;
-        }
-        .info-value {
-          font-weight: 500;
-          font-size: 0.85rem;
-          color: #0f0f23;
-          text-decoration: none;
-        }
-        .social-buttons {
-          display: flex;
-          gap: 10px;
-        }
-        .social-btn {
-          flex: 1;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 8px;
-          padding: 10px;
-          background: rgba(0,0,0,0.1);
-          border-radius: 8px;
-          font-weight: 500;
-          font-size: 0.85rem;
-          color: #0f0f23;
-          text-decoration: none;
-          transition: background 0.3s;
-        }
-        .social-btn:hover {
-          background: rgba(0,0,0,0.2);
-        }
+    <section id="about" className="bg-dark py-15 md:py-20">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-10">
+        <div className="text-center mb-10 md:mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">About Me</h2>
+          <div className="w-15 h-1 bg-accent mx-auto rounded-sm"></div>
+        </div>
 
-        @media (min-width: 768px) {
-          .about-section {
-            padding: 80px 0;
-          }
-          .about-container {
-            padding: 0 40px;
-          }
-          .section-title {
-            margin-bottom: 50px;
-          }
-          .section-title h2 {
-            font-size: 2.5rem;
-          }
-          .about-content {
-            gap: 50px;
-          }
-          .about-text p {
-            font-size: 1rem;
-          }
-        }
-
-        @media (max-width: 767px) {
-          .about-content {
-            flex-direction: column;
-            align-items: center;
-          }
-          .info-card {
-            max-width: 100%;
-          }
-        }
-      `}</style>
-
-      <section id="about" className="about-section">
-        <div className="about-container">
-          <div className="section-title">
-            <h2>About Me</h2>
-            <div className="title-underline"></div>
+        <div className="flex gap-8 md:gap-12 flex-wrap flex-col md:flex-row items-center md:items-start">
+          <div className="flex-1 min-w-[280px]">
+            <p className="text-text-secondary text-sm md:text-base leading-relaxed mb-4">
+              I'm <span className="text-text-primary font-semibold">Goutham Balaji P S</span>, a dedicated Full Stack Web Developer
+              specialized in <span className="text-accent">MERN Stack</span> (MongoDB, Express.js, React.js, Node.js)
+              with a strong focus on both front-end and back-end development. I have a passion for
+              creating dynamic and responsive web applications that provide seamless user experiences.
+            </p>
+            <p className="text-text-secondary text-sm md:text-base leading-relaxed">
+              My passion lies in building websites that are not only functional and user-friendly,
+              but also visually appealing. I strive to add a personal touch to every project,
+              ensuring that each product is eye-catching and intuitive.
+            </p>
           </div>
 
-          <div className="about-content">
-            <div className="about-text">
-              <p>
-                I'm <span className="highlight">Goutham Balaji P S</span>, a dedicated Full Stack Web Developer 
-                specialized in <span className="accent">MERN Stack</span> (MongoDB, Express.js, React.js, Node.js) 
-                with a strong focus on both front-end and back-end development. I have a passion for 
-                creating dynamic and responsive web applications that provide seamless user experiences.
-              </p>
-              <p>
-                My passion lies in building websites that are not only functional and user-friendly, 
-                but also visually appealing. I strive to add a personal touch to every project, 
-                ensuring that each product is eye-catching and intuitive.
-              </p>
+          <div className="w-full max-w-[320px] md:max-w-[320px] bg-accent rounded-2xl p-6 text-dark shrink-0">
+            <h3 className="text-xl font-bold mb-5">Personal Info</h3>
+
+            <div className="flex items-start gap-3 mb-4">
+              <div className="w-8 h-8 bg-black/10 rounded-md flex items-center justify-center shrink-0">
+                <Mail size={16} />
+              </div>
+              <div>
+                <p className="text-xs opacity-70 mb-0.5">Email</p>
+                <a href="mailto:26gouthamba@gmail.com" className="font-medium text-sm text-dark">
+                  26gouthamba@gmail.com
+                </a>
+              </div>
             </div>
 
-            <div className="info-card">
-              <h3>Personal Info</h3>
-              
-              <div className="info-item">
-                <div className="info-icon">
-                  <Mail size={16} />
-                </div>
-                <div>
-                  <p className="info-label">Email</p>
-                  <a href="mailto:26gouthamba@gmail.com" className="info-value">
-                    26gouthamba@gmail.com
-                  </a>
-                </div>
+            <div className="flex items-start gap-3 mb-4">
+              <div className="w-8 h-8 bg-black/10 rounded-md flex items-center justify-center shrink-0">
+                <Phone size={16} />
               </div>
-
-              <div className="info-item">
-                <div className="info-icon">
-                  <Phone size={16} />
-                </div>
-                <div>
-                  <p className="info-label">Mobile</p>
-                  <a href="tel:+918778786208" className="info-value">
-                    +91 87787 86208
-                  </a>
-                </div>
-              </div>
-
-              <div className="social-buttons">
-                <a 
-                  href="https://github.com/Gouthambalaji03" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="social-btn"
-                >
-                  <Github size={16} />
-                  GitHub
-                </a>
-                <a 
-                  href="https://www.linkedin.com/in/goutham-balaji-p-s-935b9a25b" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="social-btn"
-                >
-                  <Linkedin size={16} />
-                  LinkedIn
+              <div>
+                <p className="text-xs opacity-70 mb-0.5">Mobile</p>
+                <a href="tel:+918778786208" className="font-medium text-sm text-dark">
+                  +91 87787 86208
                 </a>
               </div>
+            </div>
+
+            <div className="flex gap-2.5">
+              <a
+                href="https://github.com/Gouthambalaji03"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-black/10 rounded-lg font-medium text-sm text-dark transition-colors duration-300 hover:bg-black/20"
+              >
+                <Github size={16} />
+                GitHub
+              </a>
+              <a
+                href="https://www.linkedin.com/in/goutham-balaji-p-s-935b9a25b"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-black/10 rounded-lg font-medium text-sm text-dark transition-colors duration-300 hover:bg-black/20"
+              >
+                <Linkedin size={16} />
+                LinkedIn
+              </a>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
