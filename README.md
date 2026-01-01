@@ -4,7 +4,7 @@ A modern, responsive portfolio website built with React and Tailwind CSS, showca
 
 ## Live Demo
 
-[View Portfolio](#) <!-- Add your deployed URL here -->
+[View Portfolio](#https://goutham-balaji-p-s-portfolio.vercel.app/) <!-- Add your deployed URL here -->
 
 ## Features
 

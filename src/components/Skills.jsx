@@ -34,47 +34,47 @@ const Skills = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="skills" className="py-20 md:py-28 relative">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-10">
+    <section ref={sectionRef} id="skills" className="py-16 sm:py-20 md:py-28 relative">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-10">
         {/* Section Header */}
-        <div className="text-center mb-14">
-          <span className="text-secondary text-sm font-semibold tracking-wider uppercase mb-3 block">
+        <div className="text-center mb-10 sm:mb-14">
+          <span className="text-secondary text-xs sm:text-sm font-semibold tracking-wider uppercase mb-2 sm:mb-3 block">
             What I know
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-5">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
             My <span className="gradient-text">Skills</span>
           </h2>
           <div className="section-divider"></div>
-          <p className="text-text-secondary mt-6 max-w-xl mx-auto">
+          <p className="text-text-secondary text-sm sm:text-base mt-5 sm:mt-6 max-w-xl mx-auto px-2 sm:px-0">
             Technologies and tools I use to bring ideas to life
           </p>
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {technicalSkills.map((skill, index) => (
             <div
               key={index}
-              className="glass-card card-shine rounded-2xl p-5 group"
+              className="glass-card card-shine rounded-xl sm:rounded-2xl p-4 sm:p-5 group"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
                 transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.1}s`
               }}
             >
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center text-2xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center text-xl sm:text-2xl group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                     {skill.icon}
                   </div>
                   <div>
-                    <span className="text-text-primary font-semibold text-base block">{skill.name}</span>
-                    <span className="text-text-muted text-xs">Proficiency</span>
+                    <span className="text-text-primary font-semibold text-sm sm:text-base block">{skill.name}</span>
+                    <span className="text-text-muted text-[10px] sm:text-xs">Proficiency</span>
                   </div>
                 </div>
                 <div className="text-right">
                   <span
-                    className="text-2xl font-bold gradient-text"
+                    className="text-xl sm:text-2xl font-bold gradient-text"
                     style={{
                       opacity: isVisible ? 1 : 0,
                       transition: `opacity 0.5s ease ${index * 0.1 + 0.5}s`
@@ -86,7 +86,7 @@ const Skills = () => {
               </div>
 
               {/* Progress Bar */}
-              <div className="relative h-2 bg-dark-border rounded-full overflow-hidden">
+              <div className="relative h-1.5 sm:h-2 bg-dark-border rounded-full overflow-hidden">
                 <div
                   className="absolute inset-y-0 left-0 rounded-full progress-bar-gradient"
                   style={{
@@ -103,9 +103,9 @@ const Skills = () => {
         </div>
 
         {/* Additional Skills Tags */}
-        <div className="mt-12 text-center">
-          <p className="text-text-muted text-sm mb-4">Also familiar with</p>
-          <div className="flex flex-wrap justify-center gap-3">
+        <div className="mt-8 sm:mt-12 text-center">
+          <p className="text-text-muted text-xs sm:text-sm mb-3 sm:mb-4">Also familiar with</p>
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 px-2 sm:px-0">
             {['Git', 'GitHub', 'VS Code', 'Figma', 'REST APIs', 'TypeScript', 'Next.js'].map((tag, index) => (
               <span
                 key={tag}
