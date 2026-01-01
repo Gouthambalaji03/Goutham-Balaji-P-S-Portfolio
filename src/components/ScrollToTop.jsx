@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronUp } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,14 +27,14 @@ const ScrollToTop = () => {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-8 right-8 w-12 h-12 rounded-full bg-accent border-none flex items-center justify-center cursor-pointer z-50 shadow-[0_4px_20px_rgba(245,166,35,0.4)] transition-all duration-300 hover:bg-accent-hover ${
+      className={`fixed bottom-8 right-8 w-12 h-12 rounded-xl scroll-top-btn flex items-center justify-center cursor-pointer z-50 transition-all duration-300 ${
         isVisible
           ? 'opacity-100 visible translate-y-0'
           : 'opacity-0 invisible translate-y-5'
       }`}
       aria-label="Scroll to top"
     >
-      <ChevronUp size={28} className="text-dark" strokeWidth={3} />
+      <ArrowUp size={22} className="text-dark" strokeWidth={2.5} />
     </button>
   );
 };
