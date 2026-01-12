@@ -10,7 +10,7 @@ const Skills = () => {
     {
       title: 'Frontend',
       icon: Layout,
-      skills: ['React', 'Redux', 'Next.js', 'Tailwind CSS', 'Responsive Design']
+      skills: ['React', 'Next.js', 'Tailwind CSS', 'Responsive Design']
     },
     {
       title: 'Backend',
