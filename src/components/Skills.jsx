@@ -35,28 +35,31 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-16 px-4 sm:px-8 lg:px-16">
+    <section id="skills" className="py-12 sm:py-16 md:py-20 px-4 sm:px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-12 text-center">
-          Tech Stack
-        </h2>
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-4">
+            Tech Stack
+          </h2>
+          <div className="w-12 sm:w-16 h-1 bg-primary mx-auto"></div>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {skillCategories.map((category, index) => (
-            <div key={index} className="section-card p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-dark-light border border-dark-border flex items-center justify-center">
-                  <category.icon size={18} className="text-primary" />
+            <div key={index} className="section-card p-4 sm:p-6">
+              <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-dark-light border border-dark-border flex items-center justify-center">
+                  <category.icon size={16} className="text-primary sm:w-[18px] sm:h-[18px]" />
                 </div>
-                <h3 className="text-lg font-semibold text-text-primary">
+                <h3 className="text-base sm:text-lg font-semibold text-text-primary">
                   {category.title}
                 </h3>
               </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {category.skills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="px-3 py-1.5 text-sm rounded-lg bg-dark-light border border-dark-border text-text-secondary hover:text-primary hover:border-primary transition-colors"
+                    className="px-2 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm rounded-lg bg-dark-light border border-dark-border text-text-secondary hover:text-primary hover:border-primary transition-colors"
                   >
                     {skill}
                   </span>

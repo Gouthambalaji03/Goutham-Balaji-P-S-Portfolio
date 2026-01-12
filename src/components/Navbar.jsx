@@ -38,11 +38,11 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      scrolled ? 'py-4 bg-dark/95 backdrop-blur-md border-b border-dark-border' : 'py-6 bg-transparent'
+      scrolled ? 'py-3 sm:py-4 bg-dark/95 backdrop-blur-md border-b border-dark-border' : 'py-4 sm:py-6 bg-transparent'
     }`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-16 flex justify-between items-center">
         {/* Logo */}
-        <a href="#home" className="text-xl font-bold text-primary">
+        <a href="#home" className="text-base sm:text-lg md:text-xl font-bold text-primary truncate max-w-[200px] sm:max-w-none">
           Goutham Balaji P S
         </a>
 
