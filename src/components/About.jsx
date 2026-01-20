@@ -50,7 +50,7 @@ const About = () => {
               {/* Social Buttons */}
               <div className="flex flex-col xs:flex-row gap-2 sm:gap-3">
                 <a
-                  href="https://github.com/gouthambalajips"
+                  href="https://github.com/Gouthambalaji03"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 flex items-center justify-center gap-2 py-2 sm:py-2.5 px-3 sm:px-4 rounded-lg border border-dark-border text-text-secondary hover:text-primary hover:border-primary transition-colors text-xs sm:text-sm font-medium"
