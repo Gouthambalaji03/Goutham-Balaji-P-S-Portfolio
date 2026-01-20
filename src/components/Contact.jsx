@@ -18,7 +18,7 @@ const Contact = () => {
 
   const socialLinks = [
     { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/gouthambalajips' },
-    { icon: Github, label: 'GitHub', href: 'https://github.com/gouthambalajips' },
+    { icon: Github, label: 'GitHub', href: 'https://github.com/Gouthambalaji03' },
   ];
 
   const handleChange = (e) => {
@@ -115,7 +115,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-dark-light border border-dark-border text-text-primary placeholder-text-muted focus:outline-none focus:border-primary transition-colors text-sm sm:text-base"
-                      placeholder="John Doe"
+                      placeholder="Name"
                     />
                   </div>
                   <div>
@@ -130,7 +130,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-dark-light border border-dark-border text-text-primary placeholder-text-muted focus:outline-none focus:border-primary transition-colors text-sm sm:text-base"
-                      placeholder="john@example.com"
+                      placeholder="@example.com"
                     />
                   </div>
                 </div>
