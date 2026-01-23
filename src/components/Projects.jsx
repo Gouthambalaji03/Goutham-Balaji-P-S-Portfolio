@@ -17,7 +17,7 @@ const Projects = () => {
       title: 'E-commerce Microservices Platform',
       description: 'Built event-driven system with 4 services that communicate via Apache Kafka message broker. Scaled from single server to 3-broker Kafka cluster. Made Next.js store with async order flow, cutting response time from 10s to 3s (70% faster).',
       image: ecommerceImg,
-      tech: ['Node.js', 'Kafka', 'Next.js', 'Docker'],
+      tech: ['MERN Stack', 'Node.js', 'Kafka', 'Next.js', 'Docker'],
       github: 'https://github.com/Gouthambalaji03/Ecommerce-Microservices-Kafka',
       demo: 'https://github.com/Gouthambalaji03/Ecommerce-Microservices-Kafka'
     },
@@ -25,7 +25,7 @@ const Projects = () => {
       title: 'AI Debate Arena',
       description: 'Built web app where four AI models (GPT-4o, Claude, Gemini, Llama) debate live. Added voting system, win tracking, and match history with clean React UI. Set up CI/CD workflow to run lint and build checks on PRs, auto deploy to Vercel.',
       image: aiDebateImg,
-      tech: ['Next.js', 'TypeScript', 'Vercel AI SDK', 'GitHub Actions'],
+      tech: ['React', 'Node.js', 'Express', 'Next.js', 'TypeScript', 'Vercel AI SDK', 'GitHub Actions'],
       github: 'https://github.com/Gouthambalaji03/AI-Debate-Arena',
       demo: 'https://ai-debate-arena-chi.vercel.app/'
     }
