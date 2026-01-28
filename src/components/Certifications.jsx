@@ -1,4 +1,4 @@
-import { Award, ExternalLink } from 'lucide-react';
+import { Award, ExternalLink, Users } from 'lucide-react';
 
 const Certifications = () => {
   const certifications = [
@@ -6,7 +6,14 @@ const Certifications = () => {
       title: 'Full Stack Web Development with AI Tools',
       issuer: 'IIT Madras Pravartak and Guvi HCL',
       icon: Award,
-      link: 'https://drive.google.com/file/d/1OtleiMJmBDsgS6emnYB774BlpkTwd9y9/view'
+      link: 'https://drive.google.com/file/d/1oe1ZtzbxC1bF1dHggksUEXU_CkEQGpzx/view?usp=sharing'
+    },
+    {
+      title: 'SPAC Secretary',
+      issuer: 'PSG College of Technology | 2023 - 2024',
+      description: 'Led team of 15 members to plan and run tech events for 2,500+ students. Worked with speakers, sponsors, and student groups to deliver programs on time.',
+      icon: Users,
+      link: null
     }
   ];
 
@@ -15,7 +22,7 @@ const Certifications = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-4">
-            Certifications
+            Achievements
           </h2>
           <div className="w-12 sm:w-16 h-1 bg-primary mx-auto"></div>
         </div>
@@ -31,9 +38,14 @@ const Certifications = () => {
                   {cert.title}
                 </h3>
               </div>
-              <p className="text-text-muted text-sm mb-4">
+              <p className="text-text-muted text-sm mb-2">
                 {cert.issuer}
               </p>
+              {cert.description && (
+                <p className="text-text-secondary text-xs mb-4">
+                  {cert.description}
+                </p>
+              )}
               {cert.link && (
                 <a
                   href={cert.link}
