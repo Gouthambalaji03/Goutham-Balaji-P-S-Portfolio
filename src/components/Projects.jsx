@@ -10,7 +10,8 @@ const Projects = () => {
       description: 'Built web app for online exams with webcam tracking and auto-grading features. Raised user engagement by 30% through better UI and smooth user flow. Made REST APIs for login, exams, and results with JWT tokens and role-based access.',
       image: onlineImg,
       tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
-      github: 'https://github.com/Gouthambalaji03/Online-Assessment-Platform-Frontend',
+      githubFrontend: 'https://github.com/Gouthambalaji03/Online-Assessment-Platform-Frontend',
+      githubBackend: 'https://github.com/Gouthambalaji03/Online-Assessment-Platform-Backend',
       demo: 'https://online-assessment-platform-frontend.vercel.app'
     },
     {
@@ -18,7 +19,8 @@ const Projects = () => {
       description: 'Built event-driven system with 4 services that communicate via Apache Kafka message broker. Scaled from single server to 3-broker Kafka cluster. Made Next.js store with async order flow, cutting response time from 10s to 3s (70% faster).',
       image: ecommerceImg,
       tech: ['MERN Stack', 'Node.js', 'Kafka', 'Next.js', 'Docker'],
-      github: 'https://github.com/Gouthambalaji03/Ecommerce-Microservices-Kafka',
+      githubFrontend: 'https://github.com/Gouthambalaji03/Ecommerce-Microservices-Kafka-Frontend',
+      githubBackend: 'https://github.com/Gouthambalaji03/Ecommerce-Microservices-Kafka',
       demo: 'https://github.com/Gouthambalaji03/Ecommerce-Microservices-Kafka'
     },
     {
@@ -26,7 +28,8 @@ const Projects = () => {
       description: 'Built web app where four AI models (GPT-4o, Claude, Gemini, Llama) debate live. Added voting system, win tracking, and match history with clean React UI. Set up CI/CD workflow to run lint and build checks on PRs, auto deploy to Vercel.',
       image: aiDebateImg,
       tech: ['React', 'Node.js', 'Express', 'Next.js', 'TypeScript', 'Vercel AI SDK', 'GitHub Actions'],
-      github: 'https://github.com/Gouthambalaji03/AI-Debate-Arena',
+      githubFrontend: 'https://github.com/Gouthambalaji03/AI-Debate-Arena-Frontend',
+      githubBackend: 'https://github.com/Gouthambalaji03/AI-Debate-Arena',
       demo: 'https://ai-debate-arena-chi.vercel.app/'
     }
   ];
@@ -76,25 +79,51 @@ const Projects = () => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex flex-col xs:flex-row gap-2 sm:gap-3">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-3 sm:px-4 rounded-lg bg-dark-light border border-dark-border text-text-secondary hover:text-primary hover:border-primary transition-colors text-xs sm:text-sm font-medium"
-                  >
-                    <Code size={14} className="sm:w-4 sm:h-4" />
-                    View Code
-                  </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-3 sm:px-4 rounded-lg bg-primary text-dark font-medium hover:bg-primary-light transition-colors text-xs sm:text-sm"
-                  >
-                    <ExternalLink size={14} className="sm:w-4 sm:h-4" />
-                    Live Demo
-                  </a>
+                <div className="flex flex-wrap gap-2 sm:gap-3">
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-3 sm:px-4 rounded-lg bg-dark-light border border-dark-border text-text-secondary hover:text-primary hover:border-primary transition-colors text-xs sm:text-sm font-medium"
+                    >
+                      <Code size={14} className="sm:w-4 sm:h-4" />
+                      GitHub
+                    </a>
+                  )}
+                  {project.githubFrontend && (
+                    <a
+                      href={project.githubFrontend}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-3 sm:px-4 rounded-lg bg-dark-light border border-dark-border text-text-secondary hover:text-primary hover:border-primary transition-colors text-xs sm:text-sm font-medium"
+                    >
+                      <Code size={14} className="sm:w-4 sm:h-4" />
+                      Frontend
+                    </a>
+                  )}
+                  {project.githubBackend && (
+                    <a
+                      href={project.githubBackend}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-3 sm:px-4 rounded-lg bg-dark-light border border-dark-border text-text-secondary hover:text-primary hover:border-primary transition-colors text-xs sm:text-sm font-medium"
+                    >
+                      <Code size={14} className="sm:w-4 sm:h-4" />
+                      Backend
+                    </a>
+                  )}
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-3 sm:px-4 rounded-lg bg-primary text-dark font-medium hover:bg-primary-light transition-colors text-xs sm:text-sm"
+                    >
+                      <ExternalLink size={14} className="sm:w-4 sm:h-4" />
+                      Live Demo
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
