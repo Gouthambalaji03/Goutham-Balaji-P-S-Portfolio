@@ -1,9 +1,14 @@
+import { useState } from 'react';
 import { ExternalLink, Code } from 'lucide-react';
 import onlineImg from '../assets/online.jpeg';
 import ecommerceImg from '../assets/e commerce.jpeg';
 import aiDebateImg from '../assets/ai debate.jpeg';
+import bloggifyImg from '../assets/bloggify.jpeg';
+
 
 const Projects = () => {
+  const [activeFilter, setActiveFilter] = useState('fsd');
+
   const projects = [
     {
       title: 'Online Assessment Platform',
@@ -12,7 +17,18 @@ const Projects = () => {
       tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
       githubFrontend: 'https://github.com/Gouthambalaji03/Online-Assessment-Platform-Frontend',
       githubBackend: 'https://github.com/Gouthambalaji03/Online-Assessment-Platform-Backend',
-      demo: 'https://online-assessment-platform-frontend.vercel.app'
+      demo: 'https://online-assessment-platform-frontend.vercel.app',
+      category: 'fsd'
+    },
+    {
+      title: 'Bloggify - Full-Stack Blog Platform',
+      description: 'A modern full-stack blogging platform built with the MERN stack where users can create, share, and discover stories. The platform features secure user authentication with JWT, a rich text editor for writing blog posts, image uploads via Cloudinary, and an admin panel for content moderation.',
+      image: bloggifyImg,
+      tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS', 'Cloudinary', 'JWT', 'Multer'],
+      githubFrontend: ' https://github.com/Gouthambalaji03/bloggify-frontend',
+      githubBackend: ' https://github.com/Gouthambalaji03/bloggify-backend',
+      demo: 'https://bloggify-frontend-96ei.vercel.app/',
+      category: 'fsd'
     },
     {
       title: 'E-commerce Microservices Platform',
@@ -21,7 +37,8 @@ const Projects = () => {
       tech: ['MERN Stack', 'Node.js', 'Kafka', 'Next.js', 'Docker'],
       githubFrontend: 'https://github.com/Gouthambalaji03/Ecommerce-Microservices-Kafka-Frontend',
       githubBackend: 'https://github.com/Gouthambalaji03/Ecommerce-Microservices-Kafka',
-      demo: 'https://github.com/Gouthambalaji03/Ecommerce-Microservices-Kafka'
+      demo: 'https://github.com/Gouthambalaji03/Ecommerce-Microservices-Kafka',
+      category: 'other'
     },
     {
       title: 'AI Debate Arena',
@@ -30,9 +47,14 @@ const Projects = () => {
       tech: ['React', 'Node.js', 'Express', 'Next.js', 'TypeScript', 'Vercel AI SDK', 'GitHub Actions'],
       githubFrontend: 'https://github.com/Gouthambalaji03/AI-Debate-Arena-Frontend',
       githubBackend: 'https://github.com/Gouthambalaji03/AI-Debate-Arena',
-      demo: 'https://ai-debate-arena-chi.vercel.app/'
+      demo: 'https://ai-debate-arena-chi.vercel.app/',
+      category: 'other'
     }
   ];
+
+  const filteredProjects = activeFilter === 'all'
+    ? projects
+    : projects.filter(project => project.category === 'fsd');
 
   return (
     <section id="projects" className="py-12 sm:py-16 md:py-20 px-4 sm:px-8 lg:px-16">
@@ -41,11 +63,35 @@ const Projects = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-4">
             Projects
           </h2>
-          <div className="w-12 sm:w-16 h-1 bg-primary mx-auto"></div>
+          <div className="w-12 sm:w-16 h-1 bg-primary mx-auto mb-6"></div>
+
+          {/* Filter Buttons */}
+          <div className="flex justify-center gap-3 sm:gap-4">
+            <button
+              onClick={() => setActiveFilter('fsd')}
+              className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg font-medium text-sm sm:text-base transition-colors ${
+                activeFilter === 'fsd'
+                  ? 'bg-primary text-dark'
+                  : 'bg-dark-light border border-dark-border text-text-secondary hover:text-primary hover:border-primary'
+              }`}
+            >
+              FSD Projects
+            </button>
+            <button
+              onClick={() => setActiveFilter('all')}
+              className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg font-medium text-sm sm:text-base transition-colors ${
+                activeFilter === 'all'
+                  ? 'bg-primary text-dark'
+                  : 'bg-dark-light border border-dark-border text-text-secondary hover:text-primary hover:border-primary'
+              }`}
+            >
+              All Projects
+            </button>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <div key={index} className="section-card overflow-hidden group">
               {/* Image */}
               <div className="relative overflow-hidden">
