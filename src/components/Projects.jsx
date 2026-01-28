@@ -4,6 +4,7 @@ import onlineImg from '../assets/online.jpeg';
 import ecommerceImg from '../assets/e commerce.jpeg';
 import aiDebateImg from '../assets/ai debate.jpeg';
 import bloggifyImg from '../assets/bloggify.jpeg';
+import bloodDonationImg from '../assets/blood bank.jpeg';
 
 
 const Projects = () => {
@@ -20,6 +21,16 @@ const Projects = () => {
       demo: 'https://online-assessment-platform-frontend.vercel.app',
       category: 'fsd'
     },
+     {
+      title: 'Blood Donation Platform',
+      description: 'Built web app for online exams with webcam tracking and auto-grading features. Raised user engagement by 30% through better UI and smooth user flow. Made REST APIs for login, exams, and results with JWT tokens and role-based access.',
+      image: bloodDonationImg,
+      tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'bcrypt', 'RBAC'],
+      githubFrontend: 'https://github.com/Gouthambalaji03/Blood-Bank-Frontend',
+      githubBackend: 'https://github.com/Gouthambalaji03/Blood-Bank-Backend',
+      demo: 'https://blood-bank-frontend-nu-lac.vercel.app/',
+      category: 'fsd'
+    },
     {
       title: 'Bloggify - Full-Stack Blog Platform',
       description: 'A modern full-stack blogging platform built with the MERN stack where users can create, share, and discover stories. The platform features secure user authentication with JWT, a rich text editor for writing blog posts, image uploads via Cloudinary, and an admin panel for content moderation.',
@@ -30,6 +41,7 @@ const Projects = () => {
       demo: 'https://bloggify-frontend-96ei.vercel.app/',
       category: 'fsd'
     },
+  
     {
       title: 'E-commerce Microservices Platform',
       description: 'Built event-driven system with 4 services that communicate via Apache Kafka message broker. Scaled from single server to 3-broker Kafka cluster. Made Next.js store with async order flow, cutting response time from 10s to 3s (70% faster).',
