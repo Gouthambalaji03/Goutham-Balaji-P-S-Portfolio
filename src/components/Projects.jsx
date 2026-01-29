@@ -22,10 +22,10 @@ const Projects = () => {
       category: 'fsd'
     },
      {
-      title: 'Blood Donation Platform',
-      description: 'Built web app for online exams with webcam tracking and auto-grading features. Raised user engagement by 30% through better UI and smooth user flow. Made REST APIs for login, exams, and results with JWT tokens and role-based access.',
+      title: 'Blood Bank Management System',
+      description: 'A backend service for managing blood bank operations, including inventory tracking, donor management, and request fulfillment.',
       image: bloodDonationImg,
-      tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'bcrypt', 'RBAC'],
+      tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'bcrypt', 'Tailwind CSS'],
       githubFrontend: 'https://github.com/Gouthambalaji03/Blood-Bank-Frontend',
       githubBackend: 'https://github.com/Gouthambalaji03/Blood-Bank-Backend',
       demo: 'https://blood-bank-frontend-nu-lac.vercel.app/',
@@ -33,7 +33,7 @@ const Projects = () => {
     },
     {
       title: 'Bloggify - Full-Stack Blog Platform',
-      description: 'A modern full-stack blogging platform built with the MERN stack where users can create, share, and discover stories. The platform features secure user authentication with JWT, a rich text editor for writing blog posts, image uploads via Cloudinary, and an admin panel for content moderation.',
+      description: 'A modern, full-featured blog publishing platform built with React and Vite. Bloggify allows users to create, publish, and manage blog posts with a rich text editor, complete with user authentication and admin moderation capabilities',
       image: bloggifyImg,
       tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS', 'Cloudinary', 'JWT', 'Multer'],
       githubFrontend: ' https://github.com/Gouthambalaji03/bloggify-frontend',
