@@ -23,7 +23,7 @@ const Projects = () => {
     },
      {
       title: 'Blood Bank Management System',
-      description: 'A backend service for managing blood bank operations, including inventory tracking, donor management, and request fulfillment.',
+      description: 'A MERN stack web application connecting donors, blood banks, and hospitals on a unified platform. The system manages blood bank operations with real-time inventory tracking, donor management, and seamless blood request fulfillment, streamlining the entire donation and distribution process.',
       image: bloodDonationImg,
       tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'bcrypt', 'Tailwind CSS'],
       githubFrontend: 'https://github.com/Gouthambalaji03/Blood-Bank-Frontend',
