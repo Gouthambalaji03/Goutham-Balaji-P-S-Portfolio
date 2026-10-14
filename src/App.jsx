@@ -2,6 +2,7 @@ import { Component } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Certifications from './components/Certifications';
 import Projects from './components/Projects';
@@ -60,6 +61,7 @@ function App() {
         <main id="main-content" tabIndex="-1">
           <Hero />
           <About />
+          <Experience />
           <Skills />
           <Projects />
           <Certifications />

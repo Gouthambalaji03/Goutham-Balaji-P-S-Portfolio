@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ExternalLink, Code } from 'lucide-react';
+import autobotImg from '../assets/autobot.png';
 import onlineImg from '../assets/online.jpeg';
 import ecommerceImg from '../assets/e commerce.jpeg';
 import aiDebateImg from '../assets/ai debate.jpeg';
@@ -8,9 +9,19 @@ import bloodDonationImg from '../assets/blood bank.jpeg';
 
 
 const Projects = () => {
-  const [activeFilter, setActiveFilter] = useState('fsd');
+  const [activeFilter, setActiveFilter] = useState('all');
 
   const projects = [
+    {
+      title: 'AutoBot – Agentic AI Automobile Assistant',
+      description: 'Built an autonomous AI agent using Pydantic AI and Google Gemini with dynamic intent routing and safe tool-calling for car recommendations, diagnostic triage, and EMI math. Cut multi-turn LLM costs by 90% via prefix KV-caching and 5-minute TTL caching. Made FastAPI REST and SSE streaming APIs with PostgreSQL persistence and RapidFuzz search.',
+      image: autobotImg,
+      tech: ['AI Agents', 'Pydantic AI', 'Gemini API', 'FastAPI', 'Gradio', 'PostgreSQL', 'Docker'],
+      githubFrontend: 'https://github.com/Gouthambalaji03/Auto-Bot',
+      githubBackend: 'https://github.com/Gouthambalaji03/Auto-Bot',
+      demo: 'https://auto-bot-wev1.onrender.com/',
+      category: ['ai', 'fsd']
+    },
     {
       title: 'Online Assessment Platform',
       description: 'Built web app for online exams with webcam tracking and auto-grading features. Raised user engagement by 30% through better UI and smooth user flow. Made REST APIs for login, exams, and results with JWT tokens and role-based access.',
@@ -50,7 +61,7 @@ const Projects = () => {
       githubFrontend: 'https://github.com/Gouthambalaji03/Ecommerce-Microservices-Kafka-Frontend',
       githubBackend: 'https://github.com/Gouthambalaji03/Ecommerce-Microservices-Kafka',
       demo: 'https://github.com/Gouthambalaji03/Ecommerce-Microservices-Kafka',
-      category: 'other'
+      category: 'fsd'
     },
     {
       title: 'AI Debate Arena',
@@ -60,13 +71,18 @@ const Projects = () => {
       githubFrontend: 'https://github.com/Gouthambalaji03/AI-Debate-Arena-Frontend',
       githubBackend: 'https://github.com/Gouthambalaji03/AI-Debate-Arena',
       demo: 'https://ai-debate-arena-chi.vercel.app/',
-      category: 'other'
+      category: 'ai'
     }
   ];
 
   const filteredProjects = activeFilter === 'all'
     ? projects
-    : projects.filter(project => project.category === 'fsd');
+    : projects.filter(project => {
+        if (Array.isArray(project.category)) {
+          return project.category.includes(activeFilter);
+        }
+        return project.category === activeFilter;
+      });
 
   return (
     <section id="projects" className="py-12 sm:py-16 md:py-20 px-4 sm:px-8 lg:px-16">
@@ -78,26 +94,36 @@ const Projects = () => {
           <div className="w-12 sm:w-16 h-1 bg-primary mx-auto mb-6"></div>
 
           {/* Filter Buttons */}
-          <div className="flex justify-center gap-3 sm:gap-4">
-            <button
-              onClick={() => setActiveFilter('fsd')}
-              className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg font-medium text-sm sm:text-base transition-colors ${
-                activeFilter === 'fsd'
-                  ? 'bg-primary text-dark'
-                  : 'bg-dark-light border border-dark-border text-text-secondary hover:text-primary hover:border-primary'
-              }`}
-            >
-              FSD Projects
-            </button>
+          <div className="flex flex-wrap justify-center gap-2.5 sm:gap-4">
             <button
               onClick={() => setActiveFilter('all')}
               className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg font-medium text-sm sm:text-base transition-colors ${
                 activeFilter === 'all'
-                  ? 'bg-primary text-dark'
+                  ? 'bg-primary text-dark font-semibold'
                   : 'bg-dark-light border border-dark-border text-text-secondary hover:text-primary hover:border-primary'
               }`}
             >
               All Projects
+            </button>
+            <button
+              onClick={() => setActiveFilter('ai')}
+              className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg font-medium text-sm sm:text-base transition-colors ${
+                activeFilter === 'ai'
+                  ? 'bg-primary text-dark font-semibold'
+                  : 'bg-dark-light border border-dark-border text-text-secondary hover:text-primary hover:border-primary'
+              }`}
+            >
+              AI & GenAI
+            </button>
+            <button
+              onClick={() => setActiveFilter('fsd')}
+              className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg font-medium text-sm sm:text-base transition-colors ${
+                activeFilter === 'fsd'
+                  ? 'bg-primary text-dark font-semibold'
+                  : 'bg-dark-light border border-dark-border text-text-secondary hover:text-primary hover:border-primary'
+              }`}
+            >
+              FSD Projects
             </button>
           </div>
         </div>

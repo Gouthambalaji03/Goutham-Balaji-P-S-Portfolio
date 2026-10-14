@@ -15,12 +15,12 @@ const Skills = () => {
     {
       title: 'Backend',
       icon: Database,
-      skills: ['Node.js', 'Express', 'REST APIs', 'JWT Auth', 'Microservices', 'Apache Kafka']
+      skills: ['Node.js', 'Express', 'FastAPI', 'Pydantic AI', 'REST APIs', 'JWT Auth', 'Apache Kafka']
     },
     {
       title: 'Database',
       icon: Database,
-      skills: ['MongoDB', 'MySQL']
+      skills: ['MongoDB', 'PostgreSQL', 'MySQL']
     },
     {
       title: 'DevOps',

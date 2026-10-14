@@ -1,4 +1,4 @@
-import { Download, Mail } from 'lucide-react';
+import { FileText, Mail } from 'lucide-react';
 import profileImage from '../assets/profile.png';
 
 const Hero = () => {
@@ -24,12 +24,13 @@ const Hero = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col xs:flex-row flex-wrap justify-center lg:justify-start gap-3 sm:gap-4">
               <a
-                href="/resume.pdf"
-                download="Goutham_Balaji_PS_Resume.pdf"
+                href="https://drive.google.com/file/d/1vO03Er4S6McugPyLqNe6z-I9CrMr6eC-/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-primary text-dark font-semibold rounded-lg hover:bg-primary-light transition-colors text-sm sm:text-base"
               >
-                <Download size={18} />
-                Download Resume
+                <FileText size={18} />
+                View Resume
               </a>
               <a
                 href="#contact"
